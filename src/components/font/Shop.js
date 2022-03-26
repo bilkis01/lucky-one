@@ -26,7 +26,6 @@ const Shop = () => {
     const chooseAgain=()=>{
         const arrayTwo =[];
         setCart(arrayTwo)
-
     }
     return (
         <div className='shop-container'>
@@ -51,9 +50,9 @@ const Shop = () => {
                 
                 cart.map(iteams=><Cart iteams={iteams} key={iteams.id} chooseOne={chooseOne}></Cart>)
               }
-              <button onClick={chooseOne}>Choose one for me</button>
+              <button onClick={chooseOne} className="btn1">Choose one for me</button>
            
-              <button onClick={chooseAgain}>Choose again</button>
+              <button onClick={chooseAgain} className="btn2">Choose again</button>
             </div>
             
            
