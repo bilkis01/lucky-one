@@ -8,8 +8,16 @@
     gap: 45px;
 }
 .cart-container{
-    background-color: rgb(199, 155, 240);
+    background-color: rgb(151, 218, 154);
+    width: 200px;
+    position: relative;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+   
+   
 }
+
 @media screen  and (max-width:700px){
     .products-container{
         grid-template-columns: repeat(1,1fr);

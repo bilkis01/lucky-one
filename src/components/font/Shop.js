@@ -1,5 +1,6 @@
+import { faHourglass1, faHourglass2 } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
+import Cart from './Cart';
 import Product from './Product';
 
 
@@ -16,22 +17,44 @@ const Shop = () => {
        const newCart =[...cart, product];
        setCart(newCart)
     };
+
+    const chooseOne =()=>{
+        const newArray = cart[Math.floor(Math.random()*cart.length)]
+       
+        setCart([newArray])
+    }
     return (
         <div className='shop-container'>
+            
             <div className="products-container">
+               
+            
                 {
                     products.map(product => <Product
-                        key={product.div}
+                        key={product.id}
                         product={product}
                         handelToClick={handelToClick}
 
                     ></Product>)
                 }
             </div>
+           
+
             <div className="cart-container">
-               <Card cart={cart}></Card>
+                <h1>Selected Iteams</h1>
+              {
+                
+                cart.map(iteams=><Cart iteams={iteams} key={iteams.id} chooseOne={chooseOne}></Cart>)
+              }
+              <button onClick={chooseOne}>Choose one for me</button>
             </div>
-        </div>
+            
+           
+               
+            </div>
+
+            
+       
     );
 };
 
