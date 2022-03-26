@@ -6,7 +6,7 @@ import Product from './Product';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart]= useState([])
+    const [cart, setCart] = useState([])
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -14,25 +14,25 @@ const Shop = () => {
     }, []);
 
     const handelToClick = (product) => {
-       const newCart =[...cart, product];
-       setCart(newCart)
+        const newCart = [...cart, product];
+        setCart(newCart)
     };
 
-    const chooseOne =()=>{
-        const newArray = cart[Math.floor(Math.random()*cart.length)]
-       
+    const chooseOne = () => {
+        const newArray = cart[Math.floor(Math.random() * cart.length)]
+
         setCart([newArray])
-    }
-    const chooseAgain=()=>{
-        const arrayTwo =[];
+    };
+    const chooseAgain = () => {
+        const arrayTwo = [];
         setCart(arrayTwo)
-    }
+    };
     return (
         <div className='shop-container'>
-            
+
             <div className="products-container">
-               
-            
+
+
                 {
                     products.map(product => <Product
                         key={product.id}
@@ -42,25 +42,25 @@ const Shop = () => {
                     ></Product>)
                 }
             </div>
-           
+
 
             <div className="cart-container">
                 <h1>Selected Iteams</h1>
-              {
-                
-                cart.map(iteams=><Cart iteams={iteams} key={iteams.id} chooseOne={chooseOne}></Cart>)
-              }
-              <button onClick={chooseOne} className="btn1">Choose one for me</button>
-           
-              <button onClick={chooseAgain} className="btn2">Choose again</button>
-            </div>
-            
-           
-               
+                {
+
+                    cart.map(iteams => <Cart iteams={iteams} key={iteams.id} chooseOne={chooseOne}></Cart>)
+                }
+                <button onClick={chooseOne} className="btn1">Choose one for me</button>
+
+                <button onClick={chooseAgain} className="btn2">Choose again</button>
             </div>
 
-            
-       
+
+
+        </div>
+
+
+
     );
 };
 
