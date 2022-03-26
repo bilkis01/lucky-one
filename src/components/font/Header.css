@@ -1,0 +1,12 @@
+.header{
+ background-color: rgb(41, 44, 44);
+ text-align: center;
+ padding: 5px;
+ margin: 5px;
+ font-style:italic ;
+ color: aliceblue;
+ 
+}
+span{
+    color: orange;
+}
